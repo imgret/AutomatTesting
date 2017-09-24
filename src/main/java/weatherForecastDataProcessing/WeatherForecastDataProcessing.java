@@ -6,6 +6,14 @@ public class WeatherForecastDataProcessing {
         return false;
     }
 
+    public static String getWeatherForecastFileExtension() {
+        return "";
+    }
+
+    public static String getWeatherForecastFileContent() {
+        return "";
+    }
+
     public static String getWeatherForecastLocationLatitude() {
         return "";
     }
@@ -61,10 +69,6 @@ public class WeatherForecastDataProcessing {
     }
 
     public static String getWeatherForecastHumidity() {
-        return "";
-    }
-
-    public static String getWeatherForecastFileExtension() {
         return "";
     }
 }

@@ -21,6 +21,12 @@ public class WeatherForecastDataProcessingTest {
     }
 
     @Test
+    public void testWeatherForecastFileGetContent(){
+        String fileContent = WeatherForecastDataProcessing.getWeatherForecastFileContent();
+        assertEquals("Content of file", "null");
+    }
+
+    @Test
     public void testWeatherForecastLocationLatitude(){
         String latitude = WeatherForecastDataProcessing.getWeatherForecastLocationLatitude();
         assertEquals("10.009996", "4.00008");
