@@ -5,7 +5,7 @@ import weatherForecastDataProcessing.WeatherForecastDataProcessing;
 
 import static org.junit.Assert.assertEquals;
 
-public class WeatherForecastDataProcessingTest {
+public class TestWeatherForecastDataProcessing {
 
     @Test
     public void testWeatherForecastFileExtension(){
@@ -21,7 +21,7 @@ public class WeatherForecastDataProcessingTest {
     }
 
     @Test
-    public void testWeatherForecastFileGetContent(){
+    public void testContentOfWeatherForecastFile(){
         String fileContent = WeatherForecastDataProcessing.getWeatherForecastFileContent();
         assertEquals("Content of file", "null");
     }
