@@ -1,7 +1,10 @@
 package http;
 
-import java.io.IOException;
+import jdk.internal.util.xml.impl.Input;
+
+import java.io.*;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -34,11 +37,30 @@ public class HttpUtility {
         httpURLConnection.disconnect();
     }
 
-    public static boolean downloadWeatherForecastFile(String location){
-        return false;
+    public static int getHttpConnectionResponseCode() throws IOException {
+        return httpURLConnection.getResponseCode();
     }
 
-    public static void main(String... args) {
-
+    public static boolean downloadWeatherForecastFile(String fileName) throws IOException {
+        boolean isDownloaded = false;
+        String fileContent;
+        StringBuilder fileContentStringBuilder = new StringBuilder("");
+        InputStream connectionInputStream = httpURLConnection.getInputStream();
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connectionInputStream));
+        String nextLine;
+        while ((nextLine = bufferedReader.readLine()) != null) {
+            fileContentStringBuilder.append(nextLine);
+            fileContentStringBuilder.append("\n");
+        }
+        bufferedReader.close();
+        connectionInputStream.close();
+        fileContent = fileContentStringBuilder.toString();
+        File contentFile = new File(fileName);
+        contentFile.getParentFile().mkdirs();
+        FileWriter fileWriter = new FileWriter(contentFile);
+        fileWriter.append(fileContent);
+        fileWriter.close();
+        isDownloaded = true;
+        return isDownloaded;
     }
 }
