@@ -1,4 +1,4 @@
-package http;
+package forecastData;
 
 public enum ForecastType {
     CURRENT_WEATHER("weather"),

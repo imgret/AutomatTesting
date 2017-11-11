@@ -1,10 +1,9 @@
 package http;
 
-import jdk.internal.util.xml.impl.Input;
+import forecastData.ForecastType;
 
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -56,7 +55,7 @@ public class HttpUtility {
         connectionInputStream.close();
         fileContent = fileContentStringBuilder.toString();
         File contentFile = new File(fileName);
-        contentFile.getParentFile().mkdirs();
+//        contentFile.getParentFile().mkdirs();
         FileWriter fileWriter = new FileWriter(contentFile);
         fileWriter.append(fileContent);
         fileWriter.close();
