@@ -1,4 +1,5 @@
 import downloadController.ForecastDownloadController;
+import forecastInputFileUtility.InputFileUtility;
 
 import java.io.IOException;
 
@@ -9,9 +10,11 @@ public class ForecastController {
 
         // downloadController.downloadCurrentForecastForGivenTown("Tallinn");
 
-        downloadController.addTownToInputFileUsingConsole();
-        downloadController.downloadFiveDayForecastForTownFromInputFile();
-
+//        InputFileUtility.addOneTownToInputFileUsingConsole();
+//        InputFileUtility.clearInputFile();
+//        InputFileUtility.addTownsToInputFileUsingConsole(3);
+//        downloadController.downloadFiveDayForecastForTownFromInputFile();
+//        downloadController.downloadCurrentForecastForTownFromInputFile();
 
     }
 }

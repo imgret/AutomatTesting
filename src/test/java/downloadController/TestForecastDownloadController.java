@@ -1,15 +1,13 @@
 package downloadController;
 
-import dataLoader.ForecastDataLoader;
+import forecastInputFileUtility.InputFileUtility;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
+
 
 public class TestForecastDownloadController {
 
@@ -20,16 +18,33 @@ public class TestForecastDownloadController {
         downloadController = new ForecastDownloadController();
     }
 
-    /*
-    Can't find method to test data download to file. !!!
-
-    Can't test user input and is it added to input.txt file. Scanner is not correctly working in JUnit test. !
+    @Test
+    public void testDownloadCurrentForecastForGivenTown() throws IOException {
+        boolean isDownloaded = downloadController.downloadCurrentForecastForGivenTown("Tallinn");
+        assertEquals(true, isDownloaded);
+    }
 
     @Test
-    public void testAddingTownToInputFileUsingConsole() throws IOException {
-        String inputContent = downloadController.addTownToInputFileUsingConsole();
-        String inputFileContent = Files.lines(Paths.get("input.txt")).collect(Collectors.joining());
-        assertEquals(inputContent, inputFileContent);
+    public void testDownloadFiveDaysForecastForGivenTown() throws IOException {
+        boolean isDownloaded = downloadController.downloadFiveDayForecastForGivenTown("Tallinn");
+        assertEquals(true, isDownloaded);
     }
-    */
+
+    @Test
+    public void testDownloadCurrentForecastForTownsFromInputFile() throws IOException {
+        InputFileUtility.clearInputFile();
+        InputFileUtility.addTownToInputFile("Tallinn");
+        InputFileUtility.addTownToInputFile("Helsinki");
+        boolean isDownloaded = downloadController.downloadCurrentForecastForTownFromInputFile();
+        assertEquals(true, isDownloaded);
+    }
+
+    @Test
+    public void testDownloadFiveDaysForecastForTownsFromInputFile() throws IOException {
+        InputFileUtility.clearInputFile();
+        InputFileUtility.addTownToInputFile("Tallinn");
+        InputFileUtility.addTownToInputFile("Helsinki");
+        boolean isDownloaded = downloadController.downloadFiveDayForecastForTownFromInputFile();
+        assertEquals(true, isDownloaded);
+    }
 }

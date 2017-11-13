@@ -22,7 +22,7 @@ public class TestForecastDataProcessor {
     private ForecastDataProcessor forecastProcessing;
 
     @Before
-    public void init() throws IOException, JSONException {
+    public void starter() throws IOException, JSONException {
         mockedData = mock(ForecastData.class);
         forecastProcessing = new ForecastDataProcessor(mockedData);
     }

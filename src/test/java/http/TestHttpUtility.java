@@ -14,7 +14,7 @@ public class TestHttpUtility {
     private ArrayList<String> parameters;
 
     @Before
-    public void setup() {
+    public void starter() {
         parameters = new ArrayList<>();
         parameters.add("appid=515cde85cd4f2998a633a1c50afe3dfa");
         parameters.add("units=metric");
