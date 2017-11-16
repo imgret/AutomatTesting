@@ -34,8 +34,9 @@ public class InputFileUtility {
         }
     }
 
-    public static void addTownToInputFile(String town) throws FileNotFoundException {
-        PrintWriter inputFileWriter = new PrintWriter(inputFileName);
+    public static void addTownToInputFile(String town) throws IOException {
+        FileWriter fileWriter = new FileWriter(inputFileName, true);
+        PrintWriter inputFileWriter = new PrintWriter(fileWriter);
         inputFileWriter.println(town);
         inputFileWriter.close();
     }

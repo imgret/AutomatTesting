@@ -1,9 +1,7 @@
 package forecastInputFileUtility;
 
-import org.junit.Before;
 import org.junit.Test;
 
-import javax.print.DocFlavor;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -17,15 +15,6 @@ import static org.junit.Assert.assertEquals;
 public class TestInputFileUtility {
 
     private String inputFileName = "input.txt";
-
-    @Before
-    public void starter() {
-
-    }
-
-    /*
-    Can't test user input and is it added to input.txt file. Scanner is not correctly working in JUnit test. !
-    */
 
     @Test
     public void testAddingOneTownToInputFileUsingConsole() throws IOException {
@@ -82,5 +71,15 @@ public class TestInputFileUtility {
 
         List<String> inputFileContent = Files.lines(Paths.get(inputFileName)).collect(Collectors.toList());
         assertEquals(town, inputFileContent.get(inputFileContent.size() - 1));
+    }
+
+    @Test
+    public void testAddingTwoTownsToInputFile() throws IOException {
+        InputFileUtility.addTownToInputFile("Tallinn");
+        InputFileUtility.addTownToInputFile("Riga");
+
+        List<String> inputFileContent = Files.lines(Paths.get(inputFileName)).collect(Collectors.toList());
+        assertEquals("Tallinn", inputFileContent.get(inputFileContent.size() - 2));
+        assertEquals("Riga", inputFileContent.get(inputFileContent.size() - 1));
     }
 }

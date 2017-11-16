@@ -1,7 +1,8 @@
 package forecastData;
 
-import dataLoader.ForecastDataLoader;
+import forcastFileReader.ForecastFileReader;
 import forecastDataProcessing.ForecastDataProcessor;
+import forecastFileWriter.ForecastFileWriter;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,7 +18,12 @@ public class ForecastData {
 
     public ForecastData(String fileName, ForecastType forecastType) throws JSONException, IOException {
         this.forecastType = forecastType;
-        this.textData = new ForecastDataLoader().getTextDataFromFile(fileName);
+
+        ForecastFileReader reader = new ForecastFileReader();
+        reader.openFile(fileName);
+        this.textData = reader.readFromFile();
+        reader.closeFile();
+
         this.dataProcessor = new ForecastDataProcessor(this);
         this.jsonData = dataProcessor.getJsonData();
     }

@@ -1,6 +1,7 @@
 package downloadController;
 
 import forecastData.ForecastType;
+import forecastFileWriter.ForecastFileWriter;
 import http.HttpUtility;
 
 import java.io.*;
@@ -14,53 +15,61 @@ import java.util.stream.Collectors;
 public class ForecastDownloadController {
 
     private final String inputFileName = "input.txt";
-    // private final String outputFileName = "output.txt";
     private ArrayList<String> parameters =
             new ArrayList<>(Arrays.asList("appid=515cde85cd4f2998a633a1c50afe3dfa", "units=metric"));
+    private HttpUtility httpUtility;
 
-    public boolean downloadCurrentForecastForGivenTown(String town) throws IOException {
-        String outputFileName = town + ".txt";
-        parameters.add("q=" + town);
-        String url = HttpUtility.createApiUrlAddress(ForecastType.CURRENT_WEATHER, parameters);
-        HttpUtility.createHttpUrlConnection(url);
-        boolean isDownloaded = HttpUtility.downloadWeatherForecastFile(outputFileName);
-        HttpUtility.closeHttpUrlConnection();
-        parameters.remove(parameters.size() - 1);
-        return isDownloaded;
+    public ForecastDownloadController() {
+        this.httpUtility = new HttpUtility();
     }
 
-    public boolean downloadFiveDayForecastForGivenTown(String town) throws IOException {
-        String outputFileName = town + ".txt";
-        parameters.add("q=" + town);
-        String url = HttpUtility.createApiUrlAddress(ForecastType.FIVE_DAY_FORECAST, parameters);
-        HttpUtility.createHttpUrlConnection(url);
-        boolean isDownloaded = HttpUtility.downloadWeatherForecastFile(outputFileName);
-        HttpUtility.closeHttpUrlConnection();
-        parameters.remove(parameters.size() - 1);
-        return isDownloaded;
+    public ForecastDownloadController(HttpUtility httpUtility) {
+        this.httpUtility = httpUtility;
     }
 
-    public boolean downloadCurrentForecastForTownFromInputFile() throws IOException {
-        boolean isDownloaded = true;
+    public void downloadToFileCurrentForecastForGivenTown(String town) throws IOException {
+        parameters.add("q=" + town);
+        String url = httpUtility.createApiUrlAddress(ForecastType.CURRENT_WEATHER, parameters);
+        parameters.remove(parameters.size() - 1);
+
+        httpUtility.createHttpUrlConnection(url);
+        String forecastText = httpUtility.downloadWeatherForecastText();
+        httpUtility.closeHttpUrlConnection();
+
+        String outputFileName = town + ".txt";
+        ForecastFileWriter fileWriter = new ForecastFileWriter();
+        fileWriter.openFile(outputFileName);
+        fileWriter.writeToFile(forecastText);
+        fileWriter.closeFile();
+    }
+
+    public void downloadToFileFiveDayForecastForGivenTown(String town) throws IOException {
+        parameters.add("q=" + town);
+        String url = httpUtility.createApiUrlAddress(ForecastType.FIVE_DAY_FORECAST, parameters);
+        parameters.remove(parameters.size() - 1);
+
+        httpUtility.createHttpUrlConnection(url);
+        String forecastText = httpUtility.downloadWeatherForecastText();
+        httpUtility.closeHttpUrlConnection();
+
+        String outputFileName = town + ".txt";
+        ForecastFileWriter fileWriter = new ForecastFileWriter();
+        fileWriter.openFile(outputFileName);
+        fileWriter.writeToFile(forecastText);
+        fileWriter.closeFile();
+    }
+
+    public void downloadToFileCurrentForecastForTownsFromInputFile() throws IOException {
         Set<String> towns = Files.lines(Paths.get(inputFileName)).collect(Collectors.toSet());
         for (String town : towns) {
-            isDownloaded = downloadCurrentForecastForGivenTown(town);
-            if (!isDownloaded) {
-                return isDownloaded;
-            }
+            downloadToFileCurrentForecastForGivenTown(town);
         }
-        return isDownloaded;
     }
 
-    public boolean downloadFiveDayForecastForTownFromInputFile() throws IOException {
-        boolean isDownloaded = true;
+    public void downloadToFileFiveDayForecastForTownsFromInputFile() throws IOException {
         Set<String> towns = Files.lines(Paths.get(inputFileName)).collect(Collectors.toSet());
         for (String town : towns) {
-            isDownloaded = downloadFiveDayForecastForGivenTown(town);
-            if (!isDownloaded) {
-                return isDownloaded;
-            }
+            downloadToFileFiveDayForecastForGivenTown(town);
         }
-        return isDownloaded;
     }
 }

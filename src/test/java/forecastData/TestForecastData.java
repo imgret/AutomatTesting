@@ -45,7 +45,7 @@ public class TestForecastData {
 
     /*
 
-    Can't test, because JSONObject.toString() gives elements from json in different order. !
+    Can't test, because JSONObject.toString() gives elements from json string in different order. !
 
     @Test
     public void testJsonDataSetterConvertedDataToText() throws JSONException {
