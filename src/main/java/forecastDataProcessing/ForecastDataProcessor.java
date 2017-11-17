@@ -75,7 +75,7 @@ public class ForecastDataProcessor {
         return dateFormat.format(date);
     }
 
-    public String getWeatherForecastDate() throws JSONException {
+    public String getCurrentForecastDate() throws JSONException {
         String dateInSeconds = forecastData.getJsonData().getString("dt");
         String formattedDate = formatDateFromSeconds(dateInSeconds);
         return formattedDate;
@@ -91,13 +91,13 @@ public class ForecastDataProcessor {
         return forecastDatesForFiveDays;
     }
 
-    public String getWeatherForecastMaximumTemperature() throws JSONException {
+    public String getCurrentForecastMaximumTemperature() throws JSONException {
         JSONObject mainFromJson = forecastData.getJsonData().getJSONObject("main");
         String maxTemperature = mainFromJson.getString("temp_max");
         return maxTemperature;
     }
 
-    public List<String> getFiveDaysMaximumTemperature() throws JSONException {
+    public List<String> getFiveDaysMaximumTemperatures() throws JSONException {
         List<String> maxTemperaturesForFiveDays = new LinkedList<>();
         JSONArray listOfForecastsForFiveDays = forecastData.getJsonData().getJSONArray("list");
         for (int i = 0; i < listOfForecastsForFiveDays.length(); i++) {
@@ -106,13 +106,13 @@ public class ForecastDataProcessor {
         return maxTemperaturesForFiveDays;
     }
 
-    public String getWeatherForecastMinimumTemperature() throws JSONException {
+    public String getCurrentForecastMinimumTemperature() throws JSONException {
         JSONObject mainFromJson = forecastData.getJsonData().getJSONObject("main");
         String minTemperature = mainFromJson.getString("temp_min");
         return minTemperature;
     }
 
-    public List<String> getFiveDaysMinimumTemperature() throws JSONException {
+    public List<String> getFiveDaysMinimumTemperatures() throws JSONException {
         List<String> minTemperaturesForFiveDays = new LinkedList<>();
         JSONArray listOfForecastsForFiveDays = forecastData.getJsonData().getJSONArray("list");
         for (int i = 0; i < listOfForecastsForFiveDays.length(); i++) {
@@ -121,13 +121,13 @@ public class ForecastDataProcessor {
         return minTemperaturesForFiveDays;
     }
 
-    public String getWeatherForecastAverageTemperature() throws JSONException {
+    public String getCurrentForecastAverageTemperature() throws JSONException {
         JSONObject mainFromJson = forecastData.getJsonData().getJSONObject("main");
         String averageTemperature = mainFromJson.getString("temp");
         return averageTemperature;
     }
 
-    public List<String> getFiveDaysAverageTemperature() throws JSONException {
+    public List<String> getFiveDaysAverageTemperatures() throws JSONException {
         List<String> averageTemperaturesForFiveDays = new LinkedList<>();
         JSONArray listOfForecastsForFiveDays = forecastData.getJsonData().getJSONArray("list");
         for (int i = 0; i < listOfForecastsForFiveDays.length(); i++) {
@@ -136,7 +136,7 @@ public class ForecastDataProcessor {
         return averageTemperaturesForFiveDays;
     }
 
-    public String getWeatherForecastCloudiness() throws JSONException {
+    public String getCurrentForecastCloudiness() throws JSONException {
         JSONObject cloudsFromJson = forecastData.getJsonData().getJSONObject("clouds");
         String clouds = cloudsFromJson.getString("all");
         return clouds;
@@ -151,7 +151,7 @@ public class ForecastDataProcessor {
         return cloudinessForFiveDays;
     }
 
-    public String getWeatherForecastWindDirection() throws JSONException {
+    public String getCurrentForecastWindDirection() throws JSONException {
         JSONObject windFromJson = forecastData.getJsonData().getJSONObject("wind");
         String windDirection = windFromJson.getString("deg");
         return windDirection;
@@ -166,7 +166,7 @@ public class ForecastDataProcessor {
         return windDirectionsForFiveDays;
     }
 
-    public String getWeatherForecastHumidity() throws JSONException {
+    public String getCurrentForecastHumidity() throws JSONException {
         JSONObject mainFromJson = forecastData.getJsonData().getJSONObject("main");
         String humidity = mainFromJson.getString("humidity");
         return humidity;

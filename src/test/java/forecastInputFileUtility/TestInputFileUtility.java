@@ -1,5 +1,6 @@
 package forecastInputFileUtility;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.*;
@@ -11,10 +12,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class TestInputFileUtility {
 
     private String inputFileName = "input.txt";
+    private InputFileUtility inputFileUtility;
+
+    @Before
+    public void starter() throws IOException {
+        inputFileUtility = new InputFileUtility();
+    }
 
     @Test
     public void testAddingOneTownToInputFileUsingConsole() throws IOException {
@@ -22,7 +31,9 @@ public class TestInputFileUtility {
         InputStream inputStream = new ByteArrayInputStream(inputTown.getBytes("UTF-8"));
         System.setIn(inputStream);
 
-        InputFileUtility.addOneTownToInputFileUsingConsole();
+        inputFileUtility.openInputFile();
+        inputFileUtility.addOneTownToInputFileUsingConsole();
+        inputFileUtility.closeInputFile();
 
         System.setIn(new FileInputStream(FileDescriptor.in));
 
@@ -38,7 +49,9 @@ public class TestInputFileUtility {
         outputStream.close();
         System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
 
-        InputFileUtility.clearInputFile();
+        inputFileUtility.openInputFile();
+        inputFileUtility.clearInputFile();
+        inputFileUtility.closeInputFile();
 
         String inputFileContent = Files.lines(Paths.get(inputFileName)).collect(Collectors.joining());
         assertEquals("", inputFileContent);
@@ -56,7 +69,9 @@ public class TestInputFileUtility {
                 );
         System.setIn(inputStream);
 
-        InputFileUtility.addTownsToInputFileUsingConsole(3);
+        inputFileUtility.openInputFile();
+        inputFileUtility.addTownsToInputFileUsingConsole(3);
+        inputFileUtility.closeInputFile();
 
         System.setIn(new FileInputStream(FileDescriptor.in));
 
@@ -67,7 +82,10 @@ public class TestInputFileUtility {
     @Test
     public void testAddingTownToInputFile() throws IOException {
         String town = "Tallinn";
-        InputFileUtility.addTownToInputFile(town);
+
+        inputFileUtility.openInputFile();
+        inputFileUtility.addTownToInputFile(town);
+        inputFileUtility.closeInputFile();
 
         List<String> inputFileContent = Files.lines(Paths.get(inputFileName)).collect(Collectors.toList());
         assertEquals(town, inputFileContent.get(inputFileContent.size() - 1));
@@ -75,11 +93,30 @@ public class TestInputFileUtility {
 
     @Test
     public void testAddingTwoTownsToInputFile() throws IOException {
-        InputFileUtility.addTownToInputFile("Tallinn");
-        InputFileUtility.addTownToInputFile("Riga");
+        inputFileUtility.openInputFile();
+        inputFileUtility.addTownToInputFile("Tallinn");
+        inputFileUtility.addTownToInputFile("Riga");
+        inputFileUtility.closeInputFile();
 
         List<String> inputFileContent = Files.lines(Paths.get(inputFileName)).collect(Collectors.toList());
         assertEquals("Tallinn", inputFileContent.get(inputFileContent.size() - 2));
         assertEquals("Riga", inputFileContent.get(inputFileContent.size() - 1));
+    }
+
+    @Test
+    public void testCallingPrintlnFunctionInPrintWriterInAddTownFunction() throws IOException {
+        String town = "Testing mocked PrintWriter";
+        PrintWriter mockedWriter = mock(PrintWriter.class);
+        inputFileUtility.setAppendPrintWriter(mockedWriter);
+        inputFileUtility.addTownToInputFile(town);
+        verify(mockedWriter).println(town);
+    }
+
+    @Test
+    public void testClearingInputFileUsingPrintInPrintWriter() throws FileNotFoundException {
+        PrintWriter mockedWriter = mock(PrintWriter.class);
+        inputFileUtility.setRewritePrintWriter(mockedWriter);
+        inputFileUtility.clearInputFile();
+        verify(mockedWriter).print("");
     }
 }

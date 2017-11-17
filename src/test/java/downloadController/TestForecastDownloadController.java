@@ -23,11 +23,13 @@ public class TestForecastDownloadController {
 
     private HttpUtility httpUtilityMock;
     private ForecastDownloadController downloadController;
+    private InputFileUtility inputFileUtility;
 
     @Before
-    public void starter() {
+    public void starter() throws IOException {
         httpUtilityMock = mock(HttpUtility.class);
         downloadController = new ForecastDownloadController(httpUtilityMock);
+        inputFileUtility = new InputFileUtility();
     }
 
     @Test
@@ -50,9 +52,11 @@ public class TestForecastDownloadController {
 
     @Test
     public void testDownloadCurrentForecastForTownsFromInputFile() throws IOException {
-        InputFileUtility.clearInputFile();
-        InputFileUtility.addTownToInputFile("Paris");
-        InputFileUtility.addTownToInputFile("Helsinki");
+        inputFileUtility.openInputFile();
+        inputFileUtility.clearInputFile();
+        inputFileUtility.addTownToInputFile("Paris");
+        inputFileUtility.addTownToInputFile("Helsinki");
+        inputFileUtility.closeInputFile();
 
         when(httpUtilityMock.downloadWeatherForecastText()).thenReturn("Test value for current forecast");
         downloadController.downloadToFileCurrentForecastForTownsFromInputFile();
@@ -70,9 +74,11 @@ public class TestForecastDownloadController {
 
     @Test
     public void testDownloadFiveDaysForecastForTownsFromInputFile() throws IOException {
-        InputFileUtility.clearInputFile();
-        InputFileUtility.addTownToInputFile("London");
-        InputFileUtility.addTownToInputFile("York");
+        inputFileUtility.openInputFile();
+        inputFileUtility.clearInputFile();
+        inputFileUtility.addTownToInputFile("London");
+        inputFileUtility.addTownToInputFile("York");
+        inputFileUtility.closeInputFile();
 
         when(httpUtilityMock.downloadWeatherForecastText()).thenReturn("Test value for five days forecast");
         downloadController.downloadToFileFiveDayForecastForTownsFromInputFile();

@@ -2,40 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35de23c1-b75e-45da-9fd7-1575cdb695d2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/forecastFileWriter/ForecastFileWriter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/forecastFileWriter/TestForecastFileWriter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules/AutomatTesting_main.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules/AutomatTesting_test.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/ForecastController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/dataLoader/ForecastDataLoader.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/test/dataLoader/TestDataLoader.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output.txt" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ForecastController.java" afterPath="$PROJECT_DIR$/src/main/java/executable/ForecastController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/dataLoader/ForecastDataLoader.java" afterPath="$PROJECT_DIR$/src/main/java/forcastFileReader/ForecastFileReader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/dataLoader/TestDataLoader.java" afterPath="$PROJECT_DIR$/src/test/java/forcastFileReader/TestForecastFileReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/downloadController/ForecastDownloadController.class" afterPath="$PROJECT_DIR$/build/classes/main/downloadController/ForecastDownloadController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/forecast/ForecastDeclaration.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/forecastController/TestForecastController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/executable/ForecastController.java" afterPath="$PROJECT_DIR$/src/main/java/forecastController/ForecastController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/forecastData/ForecastData.class" afterPath="$PROJECT_DIR$/build/classes/main/forecastData/ForecastData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/http/HttpUtility.class" afterPath="$PROJECT_DIR$/build/classes/main/http/HttpUtility.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/forecastDataProcessing/ForecastDataProcessor.class" afterPath="$PROJECT_DIR$/build/classes/main/forecastDataProcessing/ForecastDataProcessor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/test/downloadController/TestForecastDownloadController.class" afterPath="$PROJECT_DIR$/build/classes/test/downloadController/TestForecastDownloadController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/test/forecastDataProcessing/TestForecastDataProcessor.class" afterPath="$PROJECT_DIR$/build/classes/test/forecastDataProcessing/TestForecastDataProcessor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/test/http/TestHttpUtility.class" afterPath="$PROJECT_DIR$/build/classes/test/http/TestHttpUtility.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/AutomatTesting.iml" afterPath="$PROJECT_DIR$/.idea/modules/AutomatTesting.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/downloadTest.json" afterPath="$PROJECT_DIR$/downloadTest.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input.txt" afterPath="$PROJECT_DIR$/input.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/downloadController/ForecastDownloadController.java" afterPath="$PROJECT_DIR$/src/main/java/downloadController/ForecastDownloadController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/forecastData/ForecastData.java" afterPath="$PROJECT_DIR$/src/main/java/forecastData/ForecastData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/forecastDataProcessing/ForecastDataProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/forecastDataProcessing/ForecastDataProcessor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/forecastInputFileUtility/InputFileUtility.java" afterPath="$PROJECT_DIR$/src/main/java/forecastInputFileUtility/InputFileUtility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/http/HttpUtility.java" afterPath="$PROJECT_DIR$/src/main/java/http/HttpUtility.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/downloadController/TestForecastDownloadController.java" afterPath="$PROJECT_DIR$/src/test/java/downloadController/TestForecastDownloadController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/forecastData/TestForecastData.java" afterPath="$PROJECT_DIR$/src/test/java/forecastData/TestForecastData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/forecastDataProcessing/TestForecastDataProcessor.java" afterPath="$PROJECT_DIR$/src/test/java/forecastDataProcessing/TestForecastDataProcessor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/forecastInputFileUtility/TestInputFileUtility.java" afterPath="$PROJECT_DIR$/src/test/java/forecastInputFileUtility/TestInputFileUtility.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/http/TestHttpUtility.java" afterPath="$PROJECT_DIR$/src/test/java/http/TestHttpUtility.java" />
     </list>
@@ -78,7 +59,44 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="ForecastController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/forecastController/ForecastController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestForecastController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/forecastController/TestForecastController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#447#448#0" expanded="true" />
+                <element signature="e#508#509#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ForecastDeclaration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/forecast/ForecastDeclaration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -516,7 +534,6 @@
         <option value="$PROJECT_DIR$/src/main/java/forecastDataProcessing/ForecastDataParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/dataLoader/ForecastDataLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/SysMain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/forecastDataProcessing/ForecastDataProcessor.java" />
         <option value="$PROJECT_DIR$/src/test/java/dataLoader/TestDataLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/ForecastInputFileUtility/InputFileUtility.java" />
         <option value="$PROJECT_DIR$/src/test/java/forecastDataProcessing/TestForecastDataProcessor.java" />
@@ -524,19 +541,23 @@
         <option value="$PROJECT_DIR$/src/main/java/ForecastController.java" />
         <option value="$PROJECT_DIR$/src/test/java/forecastData/TestForecastData.java" />
         <option value="$PROJECT_DIR$/src/main/java/forcastFileReader/ForecastDataLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/forecastInputFileUtility/InputFileUtility.java" />
         <option value="$PROJECT_DIR$/src/main/java/http/HttpUtility.java" />
-        <option value="$PROJECT_DIR$/src/test/java/forecastInputFileUtility/TestInputFileUtility.java" />
-        <option value="$PROJECT_DIR$/src/test/java/http/TestHttpUtility.java" />
-        <option value="$PROJECT_DIR$/src/test/java/downloadController/TestForecastDownloadController.java" />
         <option value="$PROJECT_DIR$/src/main/java/downloadController/ForecastDownloadController.java" />
         <option value="$PROJECT_DIR$/src/main/java/forecastFileWriter/ForecastFileWriter.java" />
         <option value="$PROJECT_DIR$/src/test/java/forecastFileWriter/TestForecastFileWriter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/forecastData/ForecastData.java" />
         <option value="$PROJECT_DIR$/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker" />
         <option value="$PROJECT_DIR$/src/main/java/forcastFileReader/ForecastFileReader.java" />
         <option value="$PROJECT_DIR$/src/test/java/forcastFileReader/TestForecastFileReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/forecastDataProcessing/ForecastDataProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/forecastData/ForecastData.java" />
         <option value="$PROJECT_DIR$/src/main/java/executable/ForecastController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/downloadController/TestForecastDownloadController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/forecastInputFileUtility/InputFileUtility.java" />
+        <option value="$PROJECT_DIR$/src/test/java/forecastInputFileUtility/TestInputFileUtility.java" />
+        <option value="$PROJECT_DIR$/src/test/java/http/TestHttpUtility.java" />
+        <option value="$PROJECT_DIR$/src/main/java/forecast/ForecastDeclaration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/forecastController/ForecastController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/forecastController/TestForecastController.java" />
       </list>
     </option>
   </component>
@@ -549,7 +570,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
+    <option name="width" value="1932" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
@@ -567,8 +588,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -777,6 +796,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="forecastController" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomatTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomatTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="forcastFileReader" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -977,7 +1022,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="forcastFileReader" />
+              <option name="myItemId" value="forecastController" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1003,7 +1048,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="executable" />
+              <option name="myItemId" value="forecast" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomatTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomatTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forcastFileReader" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1035,7 +1106,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1067,70 +1140,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestHttpUtility and 6 more">
-    <configuration default="false" name="TestForecastDownloadController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="downloadController.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AutomatTesting" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="downloadController" />
-      <option name="MAIN_CLASS_NAME" value="downloadController.TestForecastDownloadController" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="downloadController and 6 more" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="PATTERN" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <patterns>
-        <pattern testClass="downloadController" />
-        <pattern testClass="forcastFileReader" />
-        <pattern testClass="forecastData" />
-        <pattern testClass="forecastDataProcessing" />
-        <pattern testClass="forecastFileWriter" />
-        <pattern testClass="forecastInputFileUtility" />
-        <pattern testClass="http" />
-      </patterns>
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.ForecastDeclaration">
     <configuration default="false" name="TestHttpUtility and 6 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="AutomatTesting" />
@@ -1160,18 +1170,38 @@
       </patterns>
       <method />
     </configuration>
-    <configuration default="false" name="TestForecastFileWriter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ForecastController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="forecastFileWriter.*" />
+          <option name="PATTERN" value="forecastController.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="forecastController.ForecastController" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="AutomatTesting" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestInputFileUtility" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="forecastInputFileUtility.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="AutomatTesting" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="forecastFileWriter" />
-      <option name="MAIN_CLASS_NAME" value="forecastFileWriter.TestForecastFileWriter" />
+      <option name="PACKAGE_NAME" value="forecastInputFileUtility" />
+      <option name="MAIN_CLASS_NAME" value="forecastInputFileUtility.TestInputFileUtility" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1186,18 +1216,38 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="TestForecastFileReader" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ForecastDeclaration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="forcastFileReader.*" />
+          <option name="PATTERN" value="forecast.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="forecast.ForecastDeclaration" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="AutomatTesting" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestForecastController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="forecastController.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="AutomatTesting" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="forcastFileReader" />
-      <option name="MAIN_CLASS_NAME" value="forcastFileReader.TestForecastFileReader" />
+      <option name="PACKAGE_NAME" value="forecastController" />
+      <option name="MAIN_CLASS_NAME" value="forecastController.TestForecastController" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1600,19 +1650,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.TestForecastDownloadController" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.downloadController and 6 more" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TestHttpUtility and 6 more" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TestForecastFileWriter" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TestForecastFileReader" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.TestHttpUtility and 6 more" />
+      <item index="1" class="java.lang.String" itemvalue="Application.ForecastController" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TestInputFileUtility" />
+      <item index="3" class="java.lang.String" itemvalue="Application.ForecastDeclaration" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TestForecastController" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TestHttpUtility and 6 more" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestForecastFileReader" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestForecastFileWriter" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.downloadController and 6 more" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TestForecastDownloadController" />
+        <item index="0" class="java.lang.String" itemvalue="Application.ForecastDeclaration" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestForecastController" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ForecastController" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestHttpUtility and 6 more" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestInputFileUtility" />
       </list>
     </recent_temporary>
   </component>
@@ -1631,7 +1681,8 @@
       <workItem from="1510502920325" duration="30000" />
       <workItem from="1510589233074" duration="11844000" />
       <workItem from="1510765827062" duration="11721000" />
-      <workItem from="1510834675942" duration="12729000" />
+      <workItem from="1510834675942" duration="13400000" />
+      <workItem from="1510921512574" duration="11499000" />
     </task>
     <task id="LOCAL-00001" summary="First two points of task 4 are ready">
       <created>1510601568311</created>
@@ -1640,46 +1691,54 @@
       <option name="project" value="LOCAL" />
       <updated>1510601568311</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Task 4 is done">
+      <created>1510853237535</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1510853237535</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestForecastFileReader - 2017.11.16 at 19h 08m 49s.xml">
-      <configuration name="TestForecastFileReader" configurationId="JUnit" />
+    <history-entry file="TestForecastController - 2017.11.17 at 17h 22m 47s.xml">
+      <configuration name="TestForecastController" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestForecastFileReader - 2017.11.16 at 19h 09m 27s.xml">
-      <configuration name="TestForecastFileReader" configurationId="JUnit" />
+    <history-entry file="TestForecastController - 2017.11.17 at 17h 24m 15s.xml">
+      <configuration name="TestForecastController" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestForecastFileReader - 2017.11.16 at 19h 15m 41s.xml">
-      <configuration name="TestForecastFileReader" configurationId="JUnit" />
+    <history-entry file="TestForecastController - 2017.11.17 at 17h 24m 42s.xml">
+      <configuration name="TestForecastController" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestForecastFileReader - 2017.11.16 at 19h 15m 52s.xml">
-      <configuration name="TestForecastFileReader" configurationId="JUnit" />
+    <history-entry file="TestForecastController - 2017.11.17 at 17h 28m 34s.xml">
+      <configuration name="TestForecastController" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestForecastFileReader - 2017.11.16 at 19h 16m 42s.xml">
-      <configuration name="TestForecastFileReader" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestForecastFileReader - 2017.11.16 at 19h 21m 57s.xml">
-      <configuration name="TestForecastFileReader" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestForecastFileWriter - 2017.11.16 at 18h 35m 24s.xml">
-      <configuration name="TestForecastFileWriter" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestHttpUtility_and_6_more - 2017.11.16 at 18h 39m 49s.xml">
+    <history-entry file="TestHttpUtility_and_6_more - 2017.11.17 at 15h 51m 59s.xml">
       <configuration name="TestHttpUtility and 6 more" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestHttpUtility_and_6_more - 2017.11.16 at 18h 59m 54s.xml">
+    <history-entry file="TestHttpUtility_and_6_more - 2017.11.17 at 15h 55m 36s.xml">
       <configuration name="TestHttpUtility and 6 more" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestHttpUtility_and_6_more - 2017.11.16 at 19h 25m 01s.xml">
+    <history-entry file="TestHttpUtility_and_6_more - 2017.11.17 at 15h 56m 15s.xml">
       <configuration name="TestHttpUtility and 6 more" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestInputFileUtility - 2017.11.17 at 15h 50m 56s.xml">
+      <configuration name="TestInputFileUtility" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestInputFileUtility - 2017.11.17 at 15h 51m 23s.xml">
+      <configuration name="TestInputFileUtility" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestInputFileUtility - 2017.11.17 at 15h 51m 51s.xml">
+      <configuration name="TestInputFileUtility" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75296000" />
+    <option name="totallyTimeSpent" value="87466000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1699,10 +1758,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32135308" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32135308" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19895834" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19885178" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1713,7 +1773,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1757,7 +1816,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First two points of task 4 are ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="First two points of task 4 are ready" />
+    <MESSAGE value="Task 4 is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task 4 is done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1770,53 +1830,19 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/downloadController/ForecastDownloadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#641#642#0" expanded="false" />
-            <element signature="e#693#694#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/downloadController/TestForecastDownloadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="22" column="6" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/forecastData/ForecastData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="43" column="18" lean-forward="false" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/forecastData/TestForecastData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="47" column="92" lean-forward="false" selection-start-line="47" selection-start-column="92" selection-end-line="47" selection-end-column="92" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/executable/ForecastController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/forecastController/ForecastController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1824,7 +1850,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1832,9 +1860,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1842,9 +1868,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1900,19 +1924,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="47" column="92" lean-forward="false" selection-start-line="47" selection-start-column="92" selection-end-line="47" selection-end-column="92" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/executable/ForecastController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/forecastController/ForecastController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1920,7 +1940,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1928,9 +1950,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1946,9 +1966,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1974,7 +1992,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1982,9 +2002,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2000,13 +2018,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/executable/ForecastController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/forecastController/ForecastController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="10" column="65" lean-forward="false" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2042,27 +2058,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/forecastData/ForecastType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#277#278#0" expanded="false" />
-            <element signature="e#312#313#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/forecastDataProcessing/ForecastDataProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="118" column="36" lean-forward="false" selection-start-line="118" selection-start-column="36" selection-end-line="118" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -2077,26 +2072,6 @@
           <caret line="59" column="11" lean-forward="false" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
           <folding>
             <element signature="e#0#5208#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/forecastInputFileUtility/InputFileUtility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/downloadController/ForecastDownloadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="58" column="31" lean-forward="false" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#641#642#0" expanded="false" />
-            <element signature="e#693#694#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2117,68 +2092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/forecastFileWriter/ForecastFileWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#274#275#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/http/HttpUtility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/http/TestHttpUtility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="53" column="16" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/forecastInputFileUtility/TestInputFileUtility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="58" column="39" lean-forward="false" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/forecastDataProcessing/TestForecastDataProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3169">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/forecastData/TestForecastData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
-          <caret line="18" column="63" lean-forward="false" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/downloadController/TestForecastDownloadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-381">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -2191,17 +2104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/forecastFileWriter/TestForecastFileWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="65" column="16" lean-forward="false" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2210,31 +2112,168 @@
         <state relative-caret-position="129">
           <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/forcastFileReader/TestForecastFileReader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/forecastDataProcessing/ForecastDataProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="37" column="43" lean-forward="false" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+        <state relative-caret-position="1836">
+          <caret line="174" column="43" lean-forward="false" selection-start-line="174" selection-start-column="43" selection-end-line="174" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/forecastData/TestForecastData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="18" column="63" lean-forward="false" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/forecastDataProcessing/TestForecastDataProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/forecastData/ForecastData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="e#914#915#0" expanded="true" />
+            <element signature="e#962#963#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/downloadController/ForecastDownloadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="58" column="31" lean-forward="false" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/executable/ForecastController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/forecastFileWriter/ForecastFileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding>
+            <element signature="e#230#231#0" expanded="false" />
+            <element signature="e#274#275#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/forecastFileWriter/TestForecastFileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="68" column="26" lean-forward="true" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/downloadController/TestForecastDownloadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="76" column="41" lean-forward="false" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/forcastFileReader/TestForecastFileReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/forecastInputFileUtility/InputFileUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#414#415#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/forecastInputFileUtility/TestInputFileUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/http/HttpUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/http/TestHttpUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="64" column="16" lean-forward="false" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/forecastData/ForecastType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/forecast/ForecastDeclaration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/London.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/forecastController/TestForecastController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#447#448#0" expanded="true" />
+            <element signature="e#508#509#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/forecastController/ForecastController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
           <folding />
         </state>
       </provider>

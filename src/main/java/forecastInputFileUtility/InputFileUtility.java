@@ -5,39 +5,51 @@ import java.util.Scanner;
 
 public class InputFileUtility {
 
-    private static String inputFileName = "input.txt";
+    private String inputFileName = "input.txt";
+    private PrintWriter appendPrintWriter;
+    private PrintWriter rewritePrintWriter;
 
-    public static void addOneTownToInputFileUsingConsole() throws IOException {
+    public InputFileUtility() {
+    }
+
+    public void setAppendPrintWriter(PrintWriter appendPrintWriter) {
+        this.appendPrintWriter = appendPrintWriter;
+    }
+
+    public void setRewritePrintWriter(PrintWriter rewritePrintWriter) {
+        this.rewritePrintWriter = rewritePrintWriter;
+    }
+
+    public void openInputFile() throws IOException {
+        appendPrintWriter = new PrintWriter(new FileWriter(inputFileName, true));
+        rewritePrintWriter = new PrintWriter(new FileWriter(inputFileName, false));
+    }
+
+    public void closeInputFile() {
+        appendPrintWriter.close();
+        rewritePrintWriter.close();
+    }
+
+    public void addOneTownToInputFileUsingConsole() throws IOException {
         System.out.print("Add town to input file: ");
 
         Scanner in = new Scanner(System.in);
-        String town = in.next();
+        String town = in.nextLine();
 
-
-        FileOutputStream outputStream = new FileOutputStream(inputFileName, true);
-        System.setOut(new PrintStream(outputStream));
-        System.out.println(town);
-        outputStream.close();
-
-        System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+        addTownToInputFile(town);
     }
 
-    public static void clearInputFile() throws FileNotFoundException {
-        PrintWriter inputFileWriter = new PrintWriter(inputFileName);
-        inputFileWriter.print("");
-        inputFileWriter.close();
+    public void clearInputFile() throws FileNotFoundException {
+        rewritePrintWriter.print("");
     }
 
-    public static void addTownsToInputFileUsingConsole(int numberOfTowns) throws IOException {
+    public void addTownsToInputFileUsingConsole(int numberOfTowns) throws IOException {
         for (int i = 0; i < numberOfTowns; i++) {
             addOneTownToInputFileUsingConsole();
         }
     }
 
-    public static void addTownToInputFile(String town) throws IOException {
-        FileWriter fileWriter = new FileWriter(inputFileName, true);
-        PrintWriter inputFileWriter = new PrintWriter(fileWriter);
-        inputFileWriter.println(town);
-        inputFileWriter.close();
+    public void addTownToInputFile(String town) throws IOException {
+        appendPrintWriter.println(town);
     }
 }

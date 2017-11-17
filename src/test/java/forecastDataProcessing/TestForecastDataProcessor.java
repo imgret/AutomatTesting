@@ -102,7 +102,7 @@ public class TestForecastDataProcessor {
     @Test
     public void testGetForecastDateFromCurrentForecast() throws JSONException {
         when(mockedData.getJsonData()).thenReturn(new JSONObject("{\"dt\":1510399200}"));
-        String date = forecastProcessing.getWeatherForecastDate();
+        String date = forecastProcessing.getCurrentForecastDate();
         assertEquals("11:20:00 11.11.2017", date);
     }
 
@@ -118,7 +118,7 @@ public class TestForecastDataProcessor {
     @Test
     public void testGetMaximumTemperatureFromCurrentForecast() throws JSONException {
         when(mockedData.getJsonData()).thenReturn(new JSONObject("{\"main\":{\"temp_max\":5}}"));
-        String maxTemperature = forecastProcessing.getWeatherForecastMaximumTemperature();
+        String maxTemperature = forecastProcessing.getCurrentForecastMaximumTemperature();
         assertEquals("5", maxTemperature);
     }
 
@@ -126,7 +126,7 @@ public class TestForecastDataProcessor {
     public void testGetMaximumTemperatureFromFiveDaysForecast() throws JSONException {
         when(mockedData.getJsonData()).thenReturn(new JSONObject(
                 "{\"list\":[{\"main\":{\"temp_max\":7.69}},{\"main\":{\"temp_max\":6.97}}]}"));
-        List<String> actualMaxTemperatures = forecastProcessing.getFiveDaysMaximumTemperature();
+        List<String> actualMaxTemperatures = forecastProcessing.getFiveDaysMaximumTemperatures();
         List<String> expectedMaxTemperatures = new LinkedList<>(Arrays.asList("7.69", "6.97"));
         assertEquals(expectedMaxTemperatures, actualMaxTemperatures);
     }
@@ -134,7 +134,7 @@ public class TestForecastDataProcessor {
     @Test
     public void testGetMinimumTemperatureFromCurrentForecast() throws JSONException {
         when(mockedData.getJsonData()).thenReturn(new JSONObject("{\"main\":{\"temp_min\":5}}"));
-        String minTemperature = forecastProcessing.getWeatherForecastMinimumTemperature();
+        String minTemperature = forecastProcessing.getCurrentForecastMinimumTemperature();
         assertEquals("5", minTemperature);
     }
 
@@ -142,7 +142,7 @@ public class TestForecastDataProcessor {
     public void testGetMinimumTemperatureFromFiveDaysForecast() throws JSONException {
         when(mockedData.getJsonData()).thenReturn(new JSONObject(
                 "{\"list\":[{\"main\":{\"temp_min\":7.44}},{\"main\":{\"temp_min\":6.78}}]}"));
-        List<String> actualMinTemperatures = forecastProcessing.getFiveDaysMinimumTemperature();
+        List<String> actualMinTemperatures = forecastProcessing.getFiveDaysMinimumTemperatures();
         List<String> expectedMinTemperatures = new LinkedList<>(Arrays.asList("7.44", "6.78"));
         assertEquals(expectedMinTemperatures, actualMinTemperatures);
     }
@@ -150,7 +150,7 @@ public class TestForecastDataProcessor {
     @Test
     public void testGetAverageTemperatureFromCurrentForecast() throws JSONException {
         when(mockedData.getJsonData()).thenReturn(new JSONObject("{\"main\":{\"temp\":5}}"));
-        String averageTemperature = forecastProcessing.getWeatherForecastAverageTemperature();
+        String averageTemperature = forecastProcessing.getCurrentForecastAverageTemperature();
         assertEquals("5", averageTemperature);
     }
 
@@ -158,7 +158,7 @@ public class TestForecastDataProcessor {
     public void testGetAverageTemperatureFromFiveDaysForecast() throws JSONException {
         when(mockedData.getJsonData()).thenReturn(new JSONObject(
                 "{\"list\":[{\"main\":{\"temp\":7.44}},{\"main\":{\"temp\":6.78}}]}"));
-        List<String> actualAverageTemperatures = forecastProcessing.getFiveDaysAverageTemperature();
+        List<String> actualAverageTemperatures = forecastProcessing.getFiveDaysAverageTemperatures();
         List<String> expectedAverageTemperatures = new LinkedList<>(Arrays.asList("7.44", "6.78"));
         assertEquals(expectedAverageTemperatures, actualAverageTemperatures);
     }
@@ -166,7 +166,7 @@ public class TestForecastDataProcessor {
     @Test
     public void testGetCloudinessFromCurrentForecast() throws JSONException {
         when(mockedData.getJsonData()).thenReturn(new JSONObject("{\"clouds\":{\"all\":90}}"));
-        String cloudiness = forecastProcessing.getWeatherForecastCloudiness();
+        String cloudiness = forecastProcessing.getCurrentForecastCloudiness();
         assertEquals("90", cloudiness);
     }
 
@@ -182,7 +182,7 @@ public class TestForecastDataProcessor {
     @Test
     public void testGetWindDirectionFromCurrentForecast() throws JSONException {
         when(mockedData.getJsonData()).thenReturn(new JSONObject("{\"wind\":{\"deg\":160}}"));
-        String windDirection = forecastProcessing.getWeatherForecastWindDirection();
+        String windDirection = forecastProcessing.getCurrentForecastWindDirection();
         assertEquals("160", windDirection);
     }
 
@@ -198,7 +198,7 @@ public class TestForecastDataProcessor {
     @Test
     public void testGetHumidityFromCurrentForecast() throws JSONException {
         when(mockedData.getJsonData()).thenReturn(new JSONObject("{\"main\":{\"humidity\":93}}"));
-        String humidity = forecastProcessing.getWeatherForecastHumidity();
+        String humidity = forecastProcessing.getCurrentForecastHumidity();
         assertEquals("93", humidity);
     }
 

@@ -42,10 +42,21 @@ public class TestHttpUtility {
     }
 
     @Test
-    public void testSuccessfulHttpConnectionToApi() throws IOException {
+    public void testSuccessfulHttpConnectionToAdiUsingInternet() throws IOException {
         httpUtility.createHttpUrlConnection(apiUrlAddress);
         int responseCode = httpUtility.getHttpConnectionResponseCode();
         httpUtility.closeHttpUrlConnection();
+
+        assertEquals(200, responseCode);
+    }
+
+    @Test
+    public void testSuccessfulHttpConnectionToApiUsingMock() throws IOException {
+        HttpURLConnection httpURLConnectionMock = mock(HttpURLConnection.class);
+        when(httpURLConnectionMock.getResponseCode()).thenReturn(200);
+
+        httpUtility.setHttpURLConnection(httpURLConnectionMock);
+        int responseCode = httpUtility.getHttpConnectionResponseCode();
 
         assertEquals(200, responseCode);
     }

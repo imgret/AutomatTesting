@@ -2,7 +2,6 @@ package forecastData;
 
 import forcastFileReader.ForecastFileReader;
 import forecastDataProcessing.ForecastDataProcessor;
-import forecastFileWriter.ForecastFileWriter;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -71,55 +70,55 @@ public class ForecastData {
     }
 
     public String getForecastDate() throws JSONException {
-        return dataProcessor.getWeatherForecastDate();
+        return dataProcessor.getCurrentForecastDate();
     }
 
     public List<String> getFiveDaysForecastDates() throws JSONException {
         return dataProcessor.getFiveDaysForecastDates();
     }
 
-    public String getMaximumTemperature() throws JSONException {
-        return dataProcessor.getWeatherForecastMaximumTemperature();
+    public String getCurrentMaximumTemperature() throws JSONException {
+        return dataProcessor.getCurrentForecastMaximumTemperature();
     }
 
-    public List<String> getFiveDaysMaximumTemperature() throws JSONException {
-        return dataProcessor.getFiveDaysMaximumTemperature();
+    public List<String> getFiveDaysMaximumTemperatures() throws JSONException {
+        return dataProcessor.getFiveDaysMaximumTemperatures();
     }
 
-    public String geMinimumTemperature() throws JSONException {
-        return dataProcessor.getWeatherForecastMinimumTemperature();
+    public String getCurrentMinimumTemperature() throws JSONException {
+        return dataProcessor.getCurrentForecastMinimumTemperature();
     }
 
-    public List<String> getFiveDaysMinimumTemperature() throws JSONException {
-        return dataProcessor.getFiveDaysMinimumTemperature();
+    public List<String> getFiveDaysMinimumTemperatures() throws JSONException {
+        return dataProcessor.getFiveDaysMinimumTemperatures();
     }
 
-    public String getAverageTemperature() throws JSONException {
-        return dataProcessor.getWeatherForecastAverageTemperature();
+    public String getCurrentAverageTemperature() throws JSONException {
+        return dataProcessor.getCurrentForecastAverageTemperature();
     }
 
-    public List<String> getFiveDaysAverageTemperature() throws JSONException {
-        return dataProcessor.getFiveDaysAverageTemperature();
+    public List<String> getFiveDaysAverageTemperatures() throws JSONException {
+        return dataProcessor.getFiveDaysAverageTemperatures();
     }
 
-    public String getCloudiness() throws JSONException {
-        return dataProcessor.getWeatherForecastCloudiness();
+    public String getCurrentCloudiness() throws JSONException {
+        return dataProcessor.getCurrentForecastCloudiness();
     }
 
     public List<String> getFiveDaysCloudiness() throws JSONException {
         return dataProcessor.getFiveDaysCloudiness();
     }
 
-    public String getWindDirection() throws JSONException {
-        return dataProcessor.getWeatherForecastWindDirection();
+    public String getCurrentWindDirection() throws JSONException {
+        return dataProcessor.getCurrentForecastWindDirection();
     }
 
     public List<String> getFiveDaysWindDirections() throws JSONException {
         return dataProcessor.getFiveDaysWindDirections();
     }
 
-    public String getHumidity() throws JSONException {
-        return dataProcessor.getWeatherForecastHumidity();
+    public String getCurrentHumidity() throws JSONException {
+        return dataProcessor.getCurrentForecastHumidity();
     }
 
     public List<String> getFiveDaysHumidity() throws JSONException {
