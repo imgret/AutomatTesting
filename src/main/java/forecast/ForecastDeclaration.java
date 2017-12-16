@@ -13,5 +13,7 @@ public class ForecastDeclaration {
         ForecastController forecastController = new ForecastController();
         List<String> forecasts = forecastController.getForecastsForTowns(Arrays.asList("Moscow", "London"));
         forecasts.forEach(System.out::println);
+
+        // System.out.println(new HttpUtility().createDownloadUrlUsingForecastTypeAndTown(ForecastType.FIVE_DAY_FORECAST, "Tallinn"));
     }
 }

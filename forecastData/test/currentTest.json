@@ -1,0 +1,12 @@
+{"coord":{"lon":24.75,"lat":59.44},
+ "weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],
+ "base":"stations",
+ "main":{"temp":12,"pressure":1014,"humidity":76,"temp_min":10,"temp_max":15},
+ "visibility":10000,
+ "wind":{"speed":6.7,"deg":290},
+ "clouds":{"all":0},
+ "dt":1508075400,
+ "sys":{"type":1,"id":5014,"message":0.0025,"country":"EE","sunrise":1508043636,"sunset":1508080289},
+ "id":588409,
+ "name":"Tallinn",
+ "cod":200}

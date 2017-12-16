@@ -1,4 +1,4 @@
-package forecastFileWriter;
+package repositoryOperator.forecastFileWriter;
 
 import java.io.File;
 import java.io.FileWriter;

@@ -6,11 +6,15 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class HttpUtility {
 
     public final String API_URL_WITHOUT_PARAMETERS = "http://api.openweathermap.org/data/2.5/";
     // private final static String API_KEY_PARAMETER = "appid=515cde85cd4f2998a633a1c50afe3dfa";
+    private ArrayList<String> parameters =
+            new ArrayList<>(Arrays.asList("appid=515cde85cd4f2998a633a1c50afe3dfa", "units=metric"));
 
     private HttpURLConnection httpURLConnection;
 
@@ -18,7 +22,7 @@ public class HttpUtility {
         this.httpURLConnection = httpURLConnection;
     }
 
-    public String createApiUrlAddress(ForecastType forecastType, ArrayList<String> parameters) {
+    public String createApiUrlAddress(ForecastType forecastType, List<String> parameters) {
         StringBuilder urlAddressBuilder = new StringBuilder(API_URL_WITHOUT_PARAMETERS);
         urlAddressBuilder.append(forecastType.getForecastType());
         urlAddressBuilder.append("?");
@@ -28,6 +32,13 @@ public class HttpUtility {
         }
         urlAddressBuilder.deleteCharAt(urlAddressBuilder.length() - 1);
         return urlAddressBuilder.toString();
+    }
+
+    public String createDownloadUrlUsingForecastTypeAndTown(ForecastType forecastType, String town) {
+        parameters.add("q=" + town);
+        String url = createApiUrlAddress(forecastType, parameters);
+        parameters.remove(parameters.size() - 1);
+        return url;
     }
 
     public void createHttpUrlConnection(String urlAddress) throws IOException {

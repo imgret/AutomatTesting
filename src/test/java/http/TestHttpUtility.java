@@ -5,7 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -13,6 +12,8 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -21,6 +22,7 @@ public class TestHttpUtility {
     private HttpUtility httpUtility;
     private ArrayList<String> parameters;
     private String apiUrlAddress;
+    private HttpUtility httpUtilityMock;
 
     @Before
     public void starter() {
@@ -32,6 +34,8 @@ public class TestHttpUtility {
         parameters.add("q=Tallinn,ee");
 
         apiUrlAddress = "http://api.openweathermap.org/data/2.5/weather?appid=515cde85cd4f2998a633a1c50afe3dfa&units=metric&q=Tallinn,ee";
+
+        httpUtilityMock = mock(HttpUtility.class);
     }
 
     @Test
@@ -81,5 +85,34 @@ public class TestHttpUtility {
         httpUtility.closeHttpUrlConnection();
 
         assertNotEquals("", forecastText);
+    }
+
+    @Test
+    public void testCreatingUrlForDownloadFromForecastTypeAndTownUsingCurrentForecastType() {
+        String actualUrl = httpUtility.createDownloadUrlUsingForecastTypeAndTown(
+                ForecastType.CURRENT_WEATHER, "Tallinn");
+        String expectedUrl = "http://api.openweathermap.org/data/2.5/weather?" +
+                "appid=515cde85cd4f2998a633a1c50afe3dfa&units=metric&q=Tallinn";
+        assertEquals(expectedUrl, actualUrl);
+    }
+
+    @Test
+    public void testCreatingUrlForDownloadFromForecastTypeAndTownUsingFiveDaysForecastType() {
+        String actualUrl = httpUtility.createDownloadUrlUsingForecastTypeAndTown(
+                ForecastType.FIVE_DAY_FORECAST, "Tallinn");
+        String expectedUrl = "http://api.openweathermap.org/data/2.5/forecast?" +
+                "appid=515cde85cd4f2998a633a1c50afe3dfa&units=metric&q=Tallinn";
+        assertEquals(expectedUrl, actualUrl);
+    }
+
+    @Test
+    public void testCreatingUrlForDownloadFromForecastTypeAndTownUsingMockedHttpUtility() {
+        when(httpUtilityMock.createApiUrlAddress(any(ForecastType.class), anyList()))
+                .thenReturn("http://api.openweathermap.org/data/2.5/");
+        String actualUrl = httpUtility.createDownloadUrlUsingForecastTypeAndTown(
+                ForecastType.CURRENT_WEATHER, "Tallinn");
+        String expectedUrl = "http://api.openweathermap.org/data/2.5/weather?" +
+                "appid=515cde85cd4f2998a633a1c50afe3dfa&units=metric&q=Tallinn";
+        assertEquals(expectedUrl, actualUrl);
     }
 }

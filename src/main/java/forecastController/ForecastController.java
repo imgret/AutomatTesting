@@ -1,55 +1,42 @@
 package forecastController;
 
-import downloadController.ForecastDownloadController;
-import forecastData.ForecastData;
-import forecastData.ForecastType;
-import forecastInputFileUtility.InputFileUtility;
+import forecastData.ForecastFullReport;
+import forecastData.ForecastOneDayReport;
+import forecastData.ForecastReportCreator;
+import repositoryOperator.forecastInputFileUtility.InputFileUtility;
 import org.json.JSONException;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ForecastController {
 
-    private InputFileUtility inputFileUtility;
-    private ForecastDownloadController downloadController;
+    private ForecastReportCreator reportCreator;
 
     public ForecastController() {
-        inputFileUtility = new InputFileUtility();
-        downloadController = new ForecastDownloadController();
+        reportCreator = new ForecastReportCreator();
+    }
+
+    public ForecastController(ForecastReportCreator reportCreator) {
+        this.reportCreator = reportCreator;
     }
 
     public String getForecastForTown(String town) throws IOException, JSONException {
-        ForecastData forecastData;
-        String currentAverageTemperature;
-        List<String> daysMinAndMaxTemperatures;
-        String geoCoordinates;
+
+        ForecastFullReport fullReport = reportCreator.createForecastFullReport(town);
+
         StringBuilder forecastStringBuilder = new StringBuilder();
-
-        inputFileUtility.openInputFile();
-        inputFileUtility.clearInputFile();
-        inputFileUtility.addTownToInputFile(town);
-        inputFileUtility.closeInputFile();
-
-        downloadController.downloadToFileCurrentForecastForGivenTown(town);
-        forecastData = new ForecastData(town + ".txt", ForecastType.CURRENT_WEATHER);
-        currentAverageTemperature = forecastData.getCurrentAverageTemperature();
-
-        downloadController.downloadToFileFiveDayForecastForGivenTown(town);
-        forecastData = new ForecastData(town + ".txt", ForecastType.FIVE_DAY_FORECAST);
-        daysMinAndMaxTemperatures = getMinAndMaxTemperaturesForEachDayOfForecast(forecastData);
-
-        geoCoordinates = getGEOTypeCoordinates(forecastData);
 
         forecastStringBuilder.append("\n");
         forecastStringBuilder.append(String.format("Town: %s\n", town));
-        forecastStringBuilder.append(String.format("Current average temperature: %s\n\n", currentAverageTemperature));
-        for (String temperatures : daysMinAndMaxTemperatures) {
+        forecastStringBuilder.append(String.format("Current average temperature: %s\n\n",
+                fullReport.currentReport.averageTemperature));
+        for (ForecastOneDayReport report : fullReport.threeDaysReport.oneDayReports) {
+            String temperatures = getMinAndMaxTemperaturesForOneDay(report).get(0);
             forecastStringBuilder.append(temperatures);
         }
-        forecastStringBuilder.append(String.format("Location GEO coordinates: %s\n", geoCoordinates));
+        forecastStringBuilder.append(String.format("Location GEO coordinates: %s\n", fullReport.coordinates));
         forecastStringBuilder.append("--------------------------------");
 
         return forecastStringBuilder.toString();
@@ -65,11 +52,11 @@ public class ForecastController {
         return townsForecasts;
     }
 
-    public List<String> getMinAndMaxTemperaturesForEachDayOfForecast(ForecastData forecastData) throws JSONException {
+    public List<String> getMinAndMaxTemperaturesForOneDay(ForecastOneDayReport oneDayReport) throws JSONException {
         List<String> minAndMaxTemperaturesForDays = new LinkedList<>();
-        List<String> dates = forecastData.getFiveDaysForecastDates();
-        List<String> minTemperatures = forecastData.getFiveDaysMinimumTemperatures();
-        List<String> maxTemperatures = forecastData.getFiveDaysMaximumTemperatures();
+        List<String> dates = oneDayReport.dates;
+        List<String> minTemperatures = oneDayReport.minTemperatures;
+        List<String> maxTemperatures = oneDayReport.maxTemperatures;
 
         String dateWithoutTime = "";
         Double minTemperature = Double.MAX_VALUE;;
@@ -91,12 +78,5 @@ public class ForecastController {
             }
         }
         return minAndMaxTemperaturesForDays;
-    }
-
-    public String getGEOTypeCoordinates(ForecastData forecastData) throws JSONException {
-        String latitude = forecastData.getLocationLatitude();
-        String longitude = forecastData.getLocationLongitude();
-
-        return String.format("%s:%s", latitude, longitude);
     }
 }

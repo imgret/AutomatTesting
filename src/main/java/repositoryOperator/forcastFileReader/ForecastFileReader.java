@@ -1,4 +1,4 @@
-package forcastFileReader;
+package repositoryOperator.forcastFileReader;
 
 import java.io.*;
 import java.util.Scanner;

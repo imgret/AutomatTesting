@@ -1,8 +1,7 @@
-package forecastFileWriter;
+package repositoryOperator.forecastFileWriter;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -12,7 +11,6 @@ import java.nio.file.Paths;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 public class TestForecastFileWriter {
