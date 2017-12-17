@@ -11,7 +11,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
 
 public class TestForecastController {
 
@@ -48,8 +47,8 @@ public class TestForecastController {
         actualMinAndMaxTemperatures.add(forecastController.getMinAndMaxTemperaturesForOneDay(
                 fullReportMock.threeDaysReport.oneDayReports[1]).get(0));
         List<String> expectedMinAndMaxTemperatures = Arrays.asList(
-                "Minimum 31.12.2017 temperature: -3,90\nMaximum 31.12.2017 temperature: 3,00\n\n",
-                "Minimum 32.12.2017 temperature: -1,09\nMaximum 32.12.2017 temperature: 6,00\n\n");
+                "Minimum 31.12.2017 temperature: -3.90\nMaximum 31.12.2017 temperature: 3.00\n\n",
+                "Minimum 32.12.2017 temperature: -1.09\nMaximum 32.12.2017 temperature: 6.00\n\n");
         assertEquals(expectedMinAndMaxTemperatures, actualMinAndMaxTemperatures);
     }
 
@@ -63,8 +62,8 @@ public class TestForecastController {
                 Arrays.asList("3", "2", "1", "0", "0.1567", "-0.01", "-3.8999999", "-2")
         );
         String actualMinAndMaxTemperaturesAndDate = forecastController.getMinAndMaxTemperaturesForOneDay(oneDayReport).get(0);
-        String expectedMinAndMaxTemperaturesAndDate = "Minimum 31.12.2017 temperature: -3,90\n" +
-                "Maximum 31.12.2017 temperature: 3,00\n\n";
+        String expectedMinAndMaxTemperaturesAndDate = "Minimum 31.12.2017 temperature: -3.90\n" +
+                "Maximum 31.12.2017 temperature: 3.00\n\n";
         assertEquals(expectedMinAndMaxTemperaturesAndDate, actualMinAndMaxTemperaturesAndDate);
     }
 }

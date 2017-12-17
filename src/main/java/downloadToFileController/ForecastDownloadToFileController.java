@@ -1,6 +1,11 @@
 package downloadToFileController;
 
+import com.google.gson.Gson;
+import forecastData.ForecastFullReport;
+import forecastData.ForecastReportCreator;
 import forecastData.ForecastType;
+import forecastDataParser.ForecastDataParser;
+import org.json.JSONException;
 import repositoryOperator.forcastFileReader.ForecastFileReader;
 import repositoryOperator.forecastFileWriter.ForecastFileWriter;
 import http.HttpUtility;
@@ -20,18 +25,21 @@ public class ForecastDownloadToFileController {
     private HttpUtility httpUtility;
     private ForecastFileWriter fileWriter;
     private ForecastFileReader fileReader;
+    private ForecastReportCreator reportCreator;
 
     public ForecastDownloadToFileController() {
         this.httpUtility = new HttpUtility();
         this.fileWriter = new ForecastFileWriter();
         this.fileReader = new ForecastFileReader();
+        this.reportCreator = new ForecastReportCreator();
     }
 
     public ForecastDownloadToFileController(HttpUtility httpUtility, ForecastFileWriter fileWriter,
-                                            ForecastFileReader fileReader) {
+                                            ForecastFileReader fileReader, ForecastReportCreator reportCreator) {
         this.httpUtility = httpUtility;
         this.fileWriter = fileWriter;
         this.fileReader = fileReader;
+        this.reportCreator = reportCreator;
     }
 
     public void setHttpUtility(HttpUtility httpUtility) {
@@ -51,6 +59,16 @@ public class ForecastDownloadToFileController {
         String forecastText = httpUtility.downloadWeatherForecastText();
         httpUtility.closeHttpUrlConnection();
         return forecastText;
+    }
+
+    public String getFullReportJsonFromForecastFullText(String town, String downloadedCurrentForecastText,
+                                                        String downloadedFiveDaysForecastText) throws IOException, JSONException {
+        Gson gson = new Gson();
+        ForecastFullReport fullReport = reportCreator.createForecastFullReport(
+                town,
+                new ForecastDataParser(ForecastType.CURRENT_WEATHER, downloadedCurrentForecastText),
+                new ForecastDataParser(ForecastType.FIVE_DAY_FORECAST, downloadedFiveDaysForecastText));
+        return gson.toJson(fullReport);
     }
 
     public void writeForecastToFile(String outputFileName, String forecastText) throws IOException {
@@ -81,6 +99,16 @@ public class ForecastDownloadToFileController {
         writeForecastToFile(outputFileName, forecastText);
     }
 
+    public void downloadToFileFullForecastReportForGivenTown(String town) throws IOException, JSONException {
+        String currentForecastUrl = httpUtility.createDownloadUrlUsingForecastTypeAndTown(ForecastType.CURRENT_WEATHER, town);
+        String fiveDaysForecastUrl = httpUtility.createDownloadUrlUsingForecastTypeAndTown(ForecastType.FIVE_DAY_FORECAST, town);
+        String currentForecastText = downloadForecastFromUrl(currentForecastUrl);
+        String fiveDaysForecastText = downloadForecastFromUrl(fiveDaysForecastUrl);
+        String fullForecastText = getFullReportJsonFromForecastFullText(town, currentForecastText, fiveDaysForecastText);
+        String outputFileName = town + ".txt";
+        writeForecastToFile(outputFileName, fullForecastText);
+    }
+
     public void downloadToFileCurrentForecastForTownsFromInputFile() throws IOException {
         Set<String> towns = readTownsForForecastFromInputFile();
         for (String town : towns) {
@@ -92,6 +120,13 @@ public class ForecastDownloadToFileController {
         Set<String> towns = readTownsForForecastFromInputFile();
         for (String town : towns) {
             downloadToFileFiveDayForecastForGivenTown(town);
+        }
+    }
+
+    public void downloadToFileFullForecastForTownsFromInputFile() throws IOException, JSONException {
+        Set<String> towns = readTownsForForecastFromInputFile();
+        for (String town : towns) {
+            downloadToFileFullForecastReportForGivenTown(town);
         }
     }
 }

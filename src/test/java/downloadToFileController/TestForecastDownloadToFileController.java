@@ -1,5 +1,7 @@
 package downloadToFileController;
 
+import forecastData.*;
+import org.json.JSONException;
 import repositoryOperator.forcastFileReader.ForecastFileReader;
 import repositoryOperator.forecastFileWriter.ForecastFileWriter;
 import http.HttpUtility;
@@ -20,6 +22,7 @@ public class TestForecastDownloadToFileController {
     private ForecastFileWriter fileWriterMock;
     private ForecastFileReader fileReaderMock;
     private ForecastDownloadToFileController downloadToFileController;
+    private ForecastReportCreator reportCreatorMock;
 
 
     @Before
@@ -27,7 +30,8 @@ public class TestForecastDownloadToFileController {
         httpUtilityMock = mock(HttpUtility.class);
         fileWriterMock = mock(ForecastFileWriter.class);
         fileReaderMock = mock(ForecastFileReader.class);
-        downloadToFileController = new ForecastDownloadToFileController(httpUtilityMock, fileWriterMock, fileReaderMock);
+        reportCreatorMock = mock(ForecastReportCreator.class);
+        downloadToFileController = new ForecastDownloadToFileController(httpUtilityMock, fileWriterMock, fileReaderMock, reportCreatorMock);
     }
 
     @Test
@@ -83,6 +87,42 @@ public class TestForecastDownloadToFileController {
     }
 
     @Test
+    public void testDownloadFullForecastReportForGivenTownWasCreatedUrlForCurrentForecast() throws IOException, JSONException {
+        when(httpUtilityMock.downloadWeatherForecastText()).thenReturn("{}");
+        downloadToFileController.downloadToFileFullForecastReportForGivenTown("Moscow");
+        verify(httpUtilityMock).createDownloadUrlUsingForecastTypeAndTown(ForecastType.CURRENT_WEATHER, "Moscow");
+    }
+
+    @Test
+    public void testDownloadFullForecastReportForGivenTownWasCreatedUrlForFiveDaysForecast() throws IOException, JSONException {
+        when(httpUtilityMock.downloadWeatherForecastText()).thenReturn("{}");
+        downloadToFileController.downloadToFileFullForecastReportForGivenTown("Moscow");
+        verify(httpUtilityMock).createDownloadUrlUsingForecastTypeAndTown(ForecastType.FIVE_DAY_FORECAST, "Moscow");
+    }
+
+    @Test
+    public void testDownloadFullForecastReportForGivenTownTwoTimesWasCalledDownloadMethod() throws IOException, JSONException {
+        when(httpUtilityMock.downloadWeatherForecastText()).thenReturn("{}");
+        downloadToFileController.downloadToFileFullForecastReportForGivenTown("Moscow");
+        verify(httpUtilityMock, times(2)).downloadWeatherForecastText();
+    }
+
+    @Test
+    public void testDownloadFullForecastReportForGivenTownTwoTimesWasCalledGetFullReportJsonTextMethod() throws IOException, JSONException {
+        when(httpUtilityMock.downloadWeatherForecastText()).thenReturn("{}");
+        downloadToFileController = spy(downloadToFileController);
+        downloadToFileController.downloadToFileFullForecastReportForGivenTown("Moscow");
+        verify(downloadToFileController).getFullReportJsonFromForecastFullText(anyString(), anyString(), anyString());
+    }
+
+    @Test
+    public void testDownloadFullForecastReportForGivenTownTwoTimesWasCalledWriteToFileMethod() throws IOException, JSONException {
+        when(httpUtilityMock.downloadWeatherForecastText()).thenReturn("{}");
+        downloadToFileController.downloadToFileFullForecastReportForGivenTown("Moscow");
+        verify(fileWriterMock).writeToFile(anyString());
+    }
+
+    @Test
     public void testDownloadCurrentForecastForTownsFromInputFileWasCalledTwoTimes() throws IOException {
         when(fileReaderMock.readFromFile()).thenReturn("Paris\nHelsinki");
         when(httpUtilityMock.downloadWeatherForecastText()).thenReturn(anyString());
@@ -116,5 +156,48 @@ public class TestForecastDownloadToFileController {
         downloadToFileController.downloadToFileFiveDayForecastForTownsFromInputFile();
         verify(fileWriterMock, times(2))
                 .writeToFile("test content");
+    }
+
+    @Test
+    public void testDownloadToFileFullForecastForTownsFromInputFileCalledWriteToFileMethodTwoTimes() throws IOException, JSONException {
+        when(fileReaderMock.readFromFile()).thenReturn("Paris\nHelsinki");
+        when(httpUtilityMock.downloadWeatherForecastText()).thenReturn("{}");
+        downloadToFileController.downloadToFileFullForecastForTownsFromInputFile();
+        verify(fileWriterMock, times(2))
+                .writeToFile(anyString());
+    }
+
+    @Test
+    public void testGetFullReportJsonFromForecastFullText() throws IOException, JSONException {
+        when(reportCreatorMock.createForecastFullReport(anyString(), any(), any())).thenReturn(
+                new ForecastFullReport("Town", "cord",
+                        new ForecastCurrentReport("0"),
+                        new ForecastThreeDaysReport(new ForecastOneDayReport[]{
+                                new ForecastOneDayReport(
+                                        Arrays.asList("", "", "", "", "", "", "", ""),
+                                        Arrays.asList("", "", "", "", "", "", "", ""),
+                                        Arrays.asList("", "", "", "", "", "", "", "")
+                                ),
+                                new ForecastOneDayReport(
+                                        Arrays.asList("", "", "", "", "", "", "", ""),
+                                        Arrays.asList("", "", "", "", "", "", "", ""),
+                                        Arrays.asList("", "", "", "", "", "", "", "")
+                                ),
+                                new ForecastOneDayReport(
+                                        Arrays.asList("", "", "", "", "", "", "", ""),
+                                        Arrays.asList("", "", "", "", "", "", "", ""),
+                                        Arrays.asList("", "", "", "", "", "", "", "")
+                                )
+                        })
+                ));
+        String actualFullReportJson = downloadToFileController.getFullReportJsonFromForecastFullText(
+                "Town", "{}", "{}");
+        String expectedFullReportJson = "{\"town\":\"Town\",\"coordinates\":\"cord\",\"currentReport\":{\"averageTemperature\":\"0\"}," +
+                "\"threeDaysReport\":{\"oneDayReports\":[{\"dates\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"]," +
+                "\"maxTemperatures\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"],\"minTemperatures\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"]}," +
+                "{\"dates\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"],\"maxTemperatures\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"]," +
+                "\"minTemperatures\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"]},{\"dates\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"]," +
+                "\"maxTemperatures\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"],\"minTemperatures\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"]}]}}";
+        assertEquals(expectedFullReportJson, actualFullReportJson);
     }
 }

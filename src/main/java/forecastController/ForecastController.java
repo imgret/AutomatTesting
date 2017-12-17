@@ -1,10 +1,12 @@
 package forecastController;
 
+import com.google.gson.Gson;
+import downloadToFileController.ForecastDownloadToFileController;
 import forecastData.ForecastFullReport;
 import forecastData.ForecastOneDayReport;
 import forecastData.ForecastReportCreator;
-import repositoryOperator.forecastInputFileUtility.InputFileUtility;
 import org.json.JSONException;
+import repositoryOperator.forcastFileReader.ForecastFileReader;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -13,18 +15,30 @@ import java.util.List;
 public class ForecastController {
 
     private ForecastReportCreator reportCreator;
+    private ForecastDownloadToFileController downloadToFileController;
+    private ForecastFileReader fileReader;
 
     public ForecastController() {
         reportCreator = new ForecastReportCreator();
+        downloadToFileController = new ForecastDownloadToFileController();
+        fileReader = new ForecastFileReader();
     }
 
-    public ForecastController(ForecastReportCreator reportCreator) {
+    public ForecastController(ForecastReportCreator reportCreator,
+                              ForecastDownloadToFileController downloadToFileController,
+                              ForecastFileReader fileReader) {
         this.reportCreator = reportCreator;
+        this.downloadToFileController = downloadToFileController;
+        this.fileReader = fileReader;
     }
 
     public String getForecastForTown(String town) throws IOException, JSONException {
 
-        ForecastFullReport fullReport = reportCreator.createForecastFullReport(town);
+        downloadToFileController.downloadToFileFullForecastReportForGivenTown(town);
+        fileReader.openFile(town + ".txt");
+        String fullReportJson = fileReader.readFromFile();
+        fileReader.closeFile();
+        ForecastFullReport fullReport = new Gson().fromJson(fullReportJson, ForecastFullReport.class);
 
         StringBuilder forecastStringBuilder = new StringBuilder();
 
