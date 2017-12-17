@@ -45,14 +45,14 @@ public class TestHttpUtility {
         assertEquals(apiUrlAddress, urlAddress);
     }
 
-    @Test
+    /*@Test
     public void testSuccessfulHttpConnectionToAdiUsingInternet() throws IOException {
         httpUtility.createHttpUrlConnection(apiUrlAddress);
         int responseCode = httpUtility.getHttpConnectionResponseCode();
         httpUtility.closeHttpUrlConnection();
 
         assertEquals(200, responseCode);
-    }
+    }*/
 
     @Test
     public void testSuccessfulHttpConnectionToApiUsingMock() throws IOException {
@@ -78,14 +78,14 @@ public class TestHttpUtility {
         assertEquals(expectedText, actualText);
     }
 
-    @Test
+   /* @Test
     public void testWeatherForecastTextDownloadUsingInternetIsNotEmptyString() throws IOException {
         httpUtility.createHttpUrlConnection(apiUrlAddress);
         String forecastText = httpUtility.downloadWeatherForecastText();
         httpUtility.closeHttpUrlConnection();
 
         assertNotEquals("", forecastText);
-    }
+    }*/
 
     @Test
     public void testCreatingUrlForDownloadFromForecastTypeAndTownUsingCurrentForecastType() {
